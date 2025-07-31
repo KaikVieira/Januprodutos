@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% load static %}
+{% load custom_filters %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Janu</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'polls/produtos.css' %}" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald:wght@600&family=Poppins:wght@700&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="{% static 'polls/img/janusemfundo.png' %}" alt="Logo JANU" />
+      </div>
+
+      <nav class="nav desktop-nav">
+        <a href="{% url 'index' %}" class="nav-link">Home</a>
+
+        <div class="dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Produtos</a>
+          <div class="dropdown-menu">
+            <a href="#" class="filtro-categoria" data-categoria="protecao-de-pneus">Proteção de Pneus</a>
+            <a href="#" class="filtro-categoria" data-categoria="perfumes-automotivos">Perfumes Automotivos</a>
+            <a href="#" class="filtro-categoria" data-categoria="produtos-para-plastico">Produtos para Plástico</a>
+            <a href="#" class="filtro-categoria" data-categoria="produtes-de-limpeza">Produtos de Limpeza</a>
+            <a href="#" class="filtro-categoria" data-categoria="polidores-de-protecao">Polidores de Proteção</a>
+            <a href="#" class="filtro-categoria" data-categoria="produtos-para-motores">Produtos para Motores</a>
+              <a href="#" class="filtro-categoria" data-categoria="boinas-para-polimento">Boinas para Polimento</a>
+            <a href="#" class="filtro-categoria" data-categoria="tratamento-em-couro">Tratamento em Couro</a>
+            <a href="#" class="filtro-categoria" data-categoria="acessorios-e-ferramentas">Acessórios e Ferramentas</a>
+
+            <a href="#" class="filtro-categoria" data-categoria="todos">Todos</a>
+          </div>
+        </div>
+
+          <a href="#contato" class="nav-link">novidades</a>
+
+
+      </nav>
+
+      <div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
+    </div>
+  </div>
+
+ <nav class="nav mobile-nav" id="mobileNav">
+    <button class="close-btn" onclick="closeMobileMenu()">×</button>
+    <a href="{% url 'index' %}" class="nav-link">Home</a>
+
+    <div class="dropdown-mobile">
+      <a href="#" class="nav-link dropdown-toggle-mobile" onclick="toggleDropdownMobile(event)">Produtos
+        <span class="arrow">▸</span>
+      </a>
+      <div class="dropdown-menu-mobile">
+        <a href="#" class="filtro-categoria" data-categoria="protecao-de-pneus">Proteção de Pneus</a>
+        <a href="#" class="filtro-categoria" data-categoria="perfumes-automotivos">Perfumes Automotivos</a>
+        <a href="#" class="filtro-categoria" data-categoria="produtos-para-plastico">Produtos para Plástico</a>
+        <a href="#" class="filtro-categoria" data-categoria="produtes-de-limpeza">Produtos de Limpeza</a>
+        <a href="#" class="filtro-categoria" data-categoria="polidores-de-protecao">Polidores de Proteção</a>
+        <a href="#" class="filtro-categoria" data-categoria="produtos-para-motores">Produtos para Motores</a>
+          <a href="#" class="filtro-categoria" data-categoria="boinas-para-polimento">Boinas para Polimento</a>
+          <a href="#" class="filtro-categoria" data-categoria="tratamento-em-couro">Tratamento em Couro</a>
+        <a href="#" class="filtro-categoria" data-categoria="acessorios-e-ferramentas">Acessórios e Ferramentas</a>
+
+        <a href="#" class="filtro-categoria" data-categoria="todos">Todos</a>
+      </div>
+    </div>
+
+   <a href="#contato" class="nav-link">novidades</a>
+  </nav>
+</header>
+
+    <!-- Seção de Vídeos -->
+    <section class="videos-section">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">Confira o desempenho dos produtos janu</h3>
+                <p class="section-subtitle">Visite nosso Instagram</p>
+            </div>
+
+            <div class="reels-grid">
+                <div class="reel-card">
+                    <div class="reel-video">
+                        <video autoplay loop muted>
+                            <source
+                                src="{% static 'polls/assets/bisjanu.mp4' %}"
+                                type="video/mp4"
+                            />
+                        </video>
+                        <div class="video-overlay">
+                            <span class="video-duration">3:00</span>
+                        </div>
+                    </div>
+                    <div class="reel-info">
+                        <h4 class="video-title">RESTORER </h4>
+                        <span class="video-meta"
+                            >restaurador de plasticos • acesse @januprodutos</span
+                        >
+                    </div>
+                </div>
+
+                <div class="reel-card">
+                    <div class="reel-video">
+                        <video autoplay loop muted>
+                            <source
+                                src="{% static 'polls/assets/corvetejanu.mp4' %}"
+                                type="video/mp4"
+                            />
+                        </video>
+                        <div class="video-overlay">
+                            <span class="video-duration">3:15</span>
+                        </div>
+                    </div>
+                    <div class="reel-info">
+                        <h4 class="video-title">JET MONSTER</h4>
+                        <span class="video-meta">cera spray • acesse @januprodutos</span>
+                    </div>
+                </div>
+
+                <div class="reel-card">
+                    <div class="reel-video">
+                        <video autoplay loop muted>
+                            <source
+                                src="{% static 'polls/assets/sw4janu.mp4' %}"
+                                type="video/mp4"
+                            />
+                        </video>
+                        <div class="video-overlay">
+                            <span class="video-duration">3:48</span>
+                        </div>
+                    </div>
+                    <div class="reel-info">
+                        <h4 class="video-title">BABALOO</h4>
+                        <span class="video-meta"
+                            >detergente automotivo •  acesse @januprodutos</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="product-container">
+
+  {% for categoria_nome, produtos_categoria in produtos_por_categoria.items %}
+    <div class="categoria-bloco" data-categoria="{{ categoria_nome|lower|slugify }}">
+        <h2 class="categoria-titulo">{{ categoria_nome }}</h2>  {# Usar categoria_nome, que é string #}
+
+      <div class="product-grid">
+        {% for produto in produtos_categoria %}
+        <div class="product-card {% if produto.destaque %}destaque{% endif %}" data-categoria="{{ produto.categoria.nome|lower|slugify }}">
+
+          {% if produto.desconto %}
+          <div class="product-badges">
+            <span class="badge badge-discount">-{{ produto.desconto }}%</span>
+          </div>
+          {% endif %}
+
+          <div class="product-carousel">
+            <div class="carousel-track">
+              <div class="carousel-item">
+                <img src="{{ produto.imagem.url }}" alt="{{ produto.titulo }}" />
+              </div>
+              {% if produto.video %}
+              <div class="carousel-item">
+                <video width="100%" controls>
+                  <source src="{{ produto.video.url }}" type="video/mp4" />
+                </video>
+              </div>
+              {% endif %}
+            </div>
+            <button class="carousel-btn prev">⟨</button>
+            <button class="carousel-btn next">⟩</button>
+          </div>
+
+          <div class="product-info">
+            <span class="product-category">{{ produto.categoria.nome }}</span>  {# Aqui também usar produto.categoria.nome #}
+            <h3 class="product-title">{{ produto.titulo }}</h3>
+            <p class="product-description">{{ produto.descricao }}</p>
+
+            <div class="product-rating">
+              <div class="stars">★★★★★</div>
+              <span class="rating-text">{{ produto.nota }} (0)</span>
+            </div>
+
+            <div class="product-price">
+              <span class="current-price">R$ {{ produto.preco }}</span>
+            </div>
+
+        <button class="buy-now-btn"
+            {% if produto.link_mercado_livre %}
+        onclick="window.open('{{ produto.link_mercado_livre }}', '_blank')"
+            {% else %}
+        disabled
+            {% endif %}
+>
+     {% if produto.link_mercado_livre %}
+        🛒 Compre Aqui
+    {% else %}
+        Sem link
+    {% endif %}
+</button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  {% endfor %}
+
+</div>
+
+    <!-- Newsletter -->
+    <section  id="contato"  class="newsletter">
+  <div class="container">
+    <div class="newsletter-content">
+      <h3 class="newsletter-title">Fique por dentro das novidades</h3>
+      <p class="newsletter-subtitle">
+        Receba ofertas exclusivas e lançamentos em primeira mão
+      </p>
+      <form action="https://formsubmit.co/SEUEMAIL@gmail.com" method="POST" class="newsletter-form">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Seu e-mail"
+          class="newsletter-input"
+        />
+        <!-- Anti-spam (captcha desativado) -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Assunto do e-mail -->
+        <input type="hidden" name="_subject" value="Nova inscrição na newsletter!">
+
+
+        <button type="submit" class="newsletter-btn">Inscrever</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Scripts JS externos -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'polls/js/produtos.js' %}"></script>
+
+<script>
+
+document.querySelectorAll('.filtro-categoria').forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const categoriaSelecionada = link.getAttribute('data-categoria');
+    const produtos = document.querySelectorAll('.product-card');
+
+    produtos.forEach(produto => {
+      const categoriaProduto = produto.getAttribute('data-categoria');
+
+      if (categoriaSelecionada === 'todos' || categoriaProduto === categoriaSelecionada) {
+        produto.style.display = 'block';
+      } else {
+        produto.style.display = 'none';
+      }
+    });
+
+    filtrarPorCategoria(categoriaSelecionada);
+    closeMobileMenu();
+  });
+});
+
+const categorias = document.querySelectorAll('.categoria-bloco');
+
+function filtrarPorCategoria(nomeCategoria) {
+  categorias.forEach(categoria => {
+    if (nomeCategoria === 'todos' || categoria.dataset.categoria === nomeCategoria) {
+      categoria.style.display = 'block';
+    } else {
+      categoria.style.display = 'none';
+    }
+  });
+}
+
+function toggleMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  if (mobileNav) mobileNav.classList.toggle('open');
+}
+
+function closeMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  if (mobileNav) mobileNav.classList.remove('open');
+}
+
+function toggleDropdownMobile(event) {
+  event.preventDefault();
+  const dropdown = event.currentTarget.closest('.dropdown-mobile');
+  const menu = dropdown.querySelector('.dropdown-menu-mobile');
+  const arrow = dropdown.querySelector('.arrow');
+
+  menu.classList.toggle('show');
+  arrow.classList.toggle('rotated');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.product-carousel');
+
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const items = track.querySelectorAll('.carousel-item');
+
+    if (items.length <= 1) {
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+    }
+  });
+});
+
+
+</script>
+</body>
+</html>
