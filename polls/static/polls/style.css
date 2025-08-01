@@ -610,26 +610,26 @@ html {
 }
 
 .img_um img {
-  width: 250px;
-  transform: translateX(85px) translateY(-120px);
+  width: 265px;
+  transform: translateX(70px) translateY(-70px);
 }
 
 .img_dois img {
-  width: 200px;
-  transform: translateX(85px) translateY(-35px);
+  width: 285px;
+  transform: translateX(70px) translateY(-90px);
 }
 
 .img_tres img {
   width: 250px;
-  transform: translateX(45px) translateY(-120px);
+  transform: translateX(65px) translateY(-70px);
 }
 
 .img_um img:hover {
-  transform: translateX(85px) translateY(-120px) scale(1.1);
+  transform: translateX(45px) translateY(-120px) scale(1.1);
 }
 
 .img_dois img:hover {
-  transform: translateX(85px) translateY(-35px) scale(1.1);
+  transform: translateX(45px) translateY(-120px) scale(1.1);
 }
 
 .img_tres img:hover {
