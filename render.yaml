@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn seu_projeto.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: seu_projeto.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+    databases:
+      - name: django-db
