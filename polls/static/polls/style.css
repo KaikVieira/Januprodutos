@@ -868,6 +868,18 @@ html {
   transition: opacity 0.3s ease;
 }
 
+.estados-revendedores:only-child,
+.estados-revendedores:has(.estado:only-child) {
+  display: flex;
+  justify-content: center;
+}
+
+.estados-revendedores .estado {
+  max-width: 300px;
+  width: 100%;
+}
+
+
 .estado:hover::before {
   opacity: 1;
 }
