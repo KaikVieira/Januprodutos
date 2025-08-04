@@ -134,5 +134,24 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = '/app/media'
 
 
+import os
+
+INSTALLED_APPS += [
+    'cloudinary',
+    'cloudinary_storage',
+]
+
+# Cloudinary config
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+# Configura o backend para arquivos de mídia
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# Opcional: se quiser configurar MEDIA_URL
+MEDIA_URL = 'https://res.cloudinary.com/{your-cloud-name}/'
 
 
