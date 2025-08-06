@@ -1298,7 +1298,7 @@ body {
 .mobile-menu-icon {
   display: none;
   font-size: 28px;
-  color: white;
+  color: black;
   cursor: pointer;
   position: fixed;
   top: 20px;
